@@ -44,6 +44,9 @@ group :development do
   # Startae gem, collection of Rails generators for faster project setup.
   gem 'start', '~> 0.1.1'
 
+  gem 'better_errors', '~> 1.1.0'
+  gem 'binding_of_caller', '~> 0.7.2'
+
 end
 
 # Use ActiveModel has_secure_password
