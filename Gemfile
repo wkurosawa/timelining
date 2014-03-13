@@ -49,6 +49,17 @@ group :development do
 
 end
 
+group :test, :development do
+  gem 'rspec-rails', '~> 2.99.0.beta1'
+  gem 'pry-rails',   '~> 0.3.2'
+  gem 'ffaker',      '~> 1.20.0'
+end
+
+group :test do
+  gem "selenium-webdriver", "~> 2.40.0"
+  gem "capybara", "~> 2.2.1"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -60,4 +71,12 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Slim templates
+gem "slim", "~> 2.0.2"
+
+# User registration/authentication
+gem "devise", "~> 3.2.3"
+
+
 

@@ -1,0 +1,26 @@
+doctype 5
+/[if lt IE 7]
+  | <html class='no-js lt-ie9 lt-ie8 lt-ie7' lang='#{I18n.locale}'>
+/[if IE 7]
+  | <html class='no-js lt-ie9 lt-ie8' lang='#{I18n.locale}'>
+/[if IE 8]
+  | <html class='no-js lt-ie9' lang='#{I18n.locale}'>
+/[if IE 9]
+  | <html class='no-js ie ie9' lang='#{I18n.locale}'>
+| <!--[if (gte IE 9)|!(IE)]<!-->
+html.no-js lang='#{I18n.locale}'
+  | <!--<![endif]-->
+  head
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+
+    = stylesheet_link_tag 'application', media: 'all'
+
+    /[if lt IE 9]
+      = javascript_include_tag 'html5shiv/dist/html5shiv-printshiv'
+    = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
+
+  body ontouchstart=''
+
+    = yield
+
