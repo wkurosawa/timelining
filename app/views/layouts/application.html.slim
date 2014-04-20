@@ -21,6 +21,7 @@ html.no-js lang='#{I18n.locale}'
     = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
 
   body ontouchstart=''
+    = render '/partials/header'
 
-    = yield
-
+    .container
+      = yield
