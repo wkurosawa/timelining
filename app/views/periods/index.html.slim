@@ -1,0 +1,27 @@
+h1 Listing periods
+
+table
+  thead
+    tr
+      th Name
+      th Start
+      th End
+      th Timeline
+      th
+      th
+      th
+
+  tbody
+    - @periods.each do |period|
+      tr
+        td = period.name
+        td = period.start
+        td = period.end
+        td = period.timeline_id
+        td = link_to 'Show', period
+        td = link_to 'Edit', edit_period_path(period)
+        td = link_to 'Destroy', period, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Period', new_period_path

@@ -73,10 +73,10 @@ end
 # gem 'debugger', group: [:development, :test]
 
 # Slim templates
-gem "slim", "~> 2.0.2"
+gem 'slim-rails', '~> 2.1.4'
 
 # User registration/authentication
-gem "devise", "~> 3.2.3"
+gem "devise", "~> 3.2.4"
 
-
-
+# Simply, creating forms
+gem 'simple_form', '~> 3.0.2'

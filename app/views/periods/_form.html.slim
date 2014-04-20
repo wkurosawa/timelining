@@ -1,0 +1,19 @@
+= simple_form_for [@timeline, @period] do |f|
+  - if @period.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@period.errors.count, "error")} prohibited this period from being saved:"
+      ul
+        - @period.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :start
+    = f.input :start, as: :date, start_year: 2000, end_year: 2020
+  .field
+    = f.label :end
+    = f.input :end, as: :date, start_year: 2000, end_year: 2020
+
+  .actions = f.submit 'Save'

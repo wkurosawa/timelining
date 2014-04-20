@@ -1,0 +1,15 @@
+
+h1 = @timeline.name
+
+ul
+  li
+    = link_to 'Edit', edit_timeline_path(@timeline)
+  li
+    = link_to 'Add Period', new_timeline_period_path(@timeline)
+
+h2 Periods
+
+- @timeline.periods.each do |period|
+  p = link_to period.name, timeline_period_path(@timeline, period)
+  p = period.start
+  p = period.end

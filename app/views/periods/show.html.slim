@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Timeline:
+  = @period.timeline.name
+p
+  strong Name:
+  = @period.name
+p
+  strong Start:
+  = @period.start
+p
+  strong End:
+  = @period.end
+
+= link_to 'Edit', edit_timeline_period_path(@timeline, @period)
+
+= link_to 'Timeline Periods', timeline_periods_path(@timeline)

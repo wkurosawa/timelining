@@ -1,0 +1,20 @@
+h1 Listing timelines
+
+table.table.table-hover
+  thead
+    tr
+      th Name
+      th User
+      th
+      th
+      th
+  tbody
+    - @timelines.each do |timeline|
+      tr
+        td = timeline.name
+        td = timeline.user_id
+        td = link_to 'Show', timeline
+        td = link_to 'Edit', edit_timeline_path(timeline)
+        td = link_to 'Destroy', timeline, method: :delete, data: { confirm: 'Are you sure?' }
+
+= link_to 'New Timeline', new_timeline_path
