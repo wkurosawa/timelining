@@ -1,2 +1,10 @@
-.center.hero-unit
-  h1 Home
+.row
+  .col-md-8
+    h1 Home
+
+    p Timelines is an application to people like me, who like to see how our time is splitted along years, months, days, lives.
+
+  .col-md-4
+    .btn-group-vertical
+      = link_to 'Login to check', new_user_session_path, class: 'btn btn-primary'
+      = link_to 'Sign in', new_user_registration_path, class: 'btn btn-primary'

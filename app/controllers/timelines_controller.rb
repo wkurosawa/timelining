@@ -1,11 +1,11 @@
 class TimelinesController < ApplicationController
   before_action :set_timeline, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:create, :edit, :update, :destroy]
+  before_action :set_user, only: [:index, :create, :edit, :update, :destroy]
 
   # GET /timelines
   # GET /timelines.json
   def index
-    @timelines = Timeline.all.includes(:periods)
+    @timelines = @user.timelines.includes(:periods)
   end
 
   # GET /timelines/1

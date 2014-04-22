@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
-  
+
   resources :timelines do
     resources :periods
   end
 
   devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root to: 'high_voltage/pages#show', id: 'home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -59,4 +57,13 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # root
+  authenticated :user do
+    root to: 'timelines#index', as: :authenticated_root
+  end
+
+  unauthenticated :user do
+    root to: 'high_voltage/pages#show', id: 'home'
+  end
 end
